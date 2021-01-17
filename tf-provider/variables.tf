@@ -21,8 +21,11 @@ variable "instance_shape"{
 variable "instance_display_name"{
   default = "webserver A"
 }
-variable "instance_fault_domain"{
+variable "fault_domain_A"{
   default = "FAULT-DOMAIN-1"
+}
+variable "fault_domain_B"{
+  default = "FAULT-DOMAIN-2"
 }
 variable "web_image_id"{
   default = "ocid1.image.oc1.me-jeddah-1.aaaaaaaa5nbzzqouuczihfspsj4a23asfocaut4yucp7bvipqrt7vah6ylbq"
