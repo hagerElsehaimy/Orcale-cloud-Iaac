@@ -39,10 +39,10 @@ variable "source_type"{
 variable "egress_description"{
   default = "All traffic"
 }
-variable "egress_destination"{
+variable "all_traffic"{
   default = "0.0.0.0/0"
 }
-variable "egress_destination_type"{
+variable "cidr_type"{
   default = "CIDR_BLOCK"
 }
 variable "egress_direction"{
@@ -50,4 +50,32 @@ variable "egress_direction"{
 }
 variable "egress_protocol"{
   default = "all"
+}
+variable "lb_sg_display_name"{
+  default = "LB_SG"
+}
+variable "web_sg_display_name"{
+  default = "WEB_SG"
+}
+variable "db_sg_display_name"{
+  default = "DB_SG"
+}
+
+variable "https_ingress_description"{
+  default = "HTTPS"
+}
+variable "http_ingress_description"{
+  default = "HTTP"
+}
+
+variable "ingress_protocol"{
+  default = 6
+}
+
+variable "ingress_direction"{
+  default = "INGRESS"
+}
+
+variable "ingress_sg_type"{
+  default = "NETWORK_SECURITY_GROUP"
 }
