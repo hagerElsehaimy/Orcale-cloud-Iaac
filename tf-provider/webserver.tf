@@ -20,6 +20,8 @@ resource "oci_core_instance" "web_server_A" {
     fault_domain = var.instance_fault_domain
     
     metadata = {
+      #  ssh_authorized_keys = var.ssh_public_key
+        ssh_authorized_keys = file(var.ssh_public_key)
         user_data = base64encode(file(var.custom_bootstrap_file_name))
     }
     source_details {

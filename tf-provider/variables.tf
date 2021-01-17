@@ -19,7 +19,7 @@ variable "instance_shape"{
     default = "VM.Standard.E2.1.Micro"
 }
 variable "instance_display_name"{
-  default = "webserver1"
+  default = "webserver A"
 }
 variable "instance_fault_domain"{
   default = "FAULT-DOMAIN-1"
@@ -28,7 +28,7 @@ variable "web_image_id"{
   default = "ocid1.image.oc1.me-jeddah-1.aaaaaaaa5nbzzqouuczihfspsj4a23asfocaut4yucp7bvipqrt7vah6ylbq"
 }
 variable "preserve_boot_volume"{
-  default = "true"
+  default = "false"
 }
 variable "custom_bootstrap_file_name"{
   default = "/Users/hager/Downloads/install_apache.sh"
@@ -78,4 +78,7 @@ variable "ingress_direction"{
 
 variable "ingress_sg_type"{
   default = "NETWORK_SECURITY_GROUP"
+}
+variable "ssh_public_key"{
+  default = "/Users/hager/Downloads/public.key.pub"
 }
