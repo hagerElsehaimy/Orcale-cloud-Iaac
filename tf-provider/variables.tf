@@ -15,3 +15,18 @@ variable "region_identifier" {
 variable "private_key_path"{
     default = "/Users/hager/.oci/oci.pem"
 }
+variable "instance_shape"{
+    default = "VM.Standard.E2.1.Micro"
+}
+variable "instance_display_name"{
+  default = "webserver1"
+}
+variable "instance_fault_domain"{
+  default = "FAULT-DOMAIN-1"
+}
+variable "web_image_id"{
+  default = "ocid1.image.oc1.me-jeddah-1.aaaaaaaa5nbzzqouuczihfspsj4a23asfocaut4yucp7bvipqrt7vah6ylbq"
+}
+variable "preserve_boot_volume"{
+  default = "true"
+}
