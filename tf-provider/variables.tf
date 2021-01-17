@@ -30,3 +30,9 @@ variable "web_image_id"{
 variable "preserve_boot_volume"{
   default = "true"
 }
+variable "custom_bootstrap_file_name"{
+  default = "/Users/hager/Downloads/install_apache.sh"
+}
+variable "source_type"{
+  default = "image"
+}

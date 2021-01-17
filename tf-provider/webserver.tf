@@ -19,14 +19,13 @@ resource "oci_core_instance" "web_server_A" {
     display_name = var.instance_display_name
     fault_domain = var.instance_fault_domain
     
-    #metadata = {
-       # ssh_authorized_keys = var.ssh_public_key
-        #user_data = base64encode(file(var.custom_bootstrap_file_name))
-    #}
+    metadata = {
+        user_data = base64encode(file(var.custom_bootstrap_file_name))
+    }
     source_details {
         #Required
         source_id = var.web_image_id
-        source_type = "image"
+        source_type = var.source_type
     }
     preserve_boot_volume = var.preserve_boot_volume
 }
