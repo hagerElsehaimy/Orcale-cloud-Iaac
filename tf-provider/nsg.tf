@@ -115,3 +115,36 @@ resource "oci_core_network_security_group_security_rule" "db_http" {
     }
   }
 }
+
+
+
+
+resource "oci_core_network_security_group_security_rule" "lb_egress" {
+  network_security_group_id = oci_core_network_security_group.lb_network_security_group.id
+
+  description = var.egress_description
+  protocol = var.egress_protocol
+  direction   = var.egress_direction
+  destination_type = var.egress_destination_type
+  destination  = var.egress_destination
+}
+
+resource "oci_core_network_security_group_security_rule" "web_egress" {
+  network_security_group_id = oci_core_network_security_group.web_network_security_group.id
+
+  description = var.egress_description
+  protocol = var.egress_protocol
+  direction   = var.egress_direction
+  destination_type = var.egress_destination_type
+  destination  = var.egress_destination
+}
+
+resource "oci_core_network_security_group_security_rule" "db_egress" {
+  network_security_group_id = oci_core_network_security_group.db_network_security_group.id
+
+  description = var.egress_description
+  protocol = var.egress_protocol
+  direction   = var.egress_direction
+  destination_type = var.egress_destination_type
+  destination  = var.egress_destination
+}

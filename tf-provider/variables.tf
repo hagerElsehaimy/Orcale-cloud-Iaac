@@ -36,3 +36,18 @@ variable "custom_bootstrap_file_name"{
 variable "source_type"{
   default = "image"
 }
+variable "egress_description"{
+  default = "All traffic"
+}
+variable "egress_destination"{
+  default = "0.0.0.0/0"
+}
+variable "egress_destination_type"{
+  default = "CIDR_BLOCK"
+}
+variable "egress_direction"{
+  default = "EGRESS"
+}
+variable "egress_protocol"{
+  default = "all"
+}
