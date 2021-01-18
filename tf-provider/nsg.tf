@@ -31,8 +31,8 @@ resource "oci_core_network_security_group_security_rule" "lb_https_ingress" {
   source      = var.all_traffic
   tcp_options {
     destination_port_range {
-      min = 443
-      max = 443
+      min = var.https_port
+      max = var.https_port
     }
   }
 }
@@ -47,8 +47,8 @@ resource "oci_core_network_security_group_security_rule" "lb_http_ingress" {
   source      = var.all_traffic
   tcp_options {
     destination_port_range {
-      min = 80
-      max = 80
+      min = var.http_port
+      max = var.http_port
     }
   }
 }
@@ -64,8 +64,8 @@ resource "oci_core_network_security_group_security_rule" "web_https_ingress" {
   source      = oci_core_network_security_group.lb_network_security_group.id
   tcp_options {
     destination_port_range {
-      min = 443
-      max = 443
+      min = var.https_port
+      max = var.https_port
     }
   }
 }
@@ -80,8 +80,8 @@ resource "oci_core_network_security_group_security_rule" "web_http_ingress" {
   source      = oci_core_network_security_group.lb_network_security_group.id
   tcp_options {
     destination_port_range {
-      min = 80
-      max = 80
+      min = var.http_port
+      max = var.http_port
     }
   }
 }
@@ -96,8 +96,8 @@ resource "oci_core_network_security_group_security_rule" "db_https_ingress" {
   source      = oci_core_network_security_group.web_network_security_group.id
   tcp_options {
     destination_port_range {
-      min = 443
-      max = 443
+      min = var.https_port
+      max = var.https_port
     }
   }
 }
@@ -112,8 +112,8 @@ resource "oci_core_network_security_group_security_rule" "db_http_ingress" {
   source      = oci_core_network_security_group.web_network_security_group.id
   tcp_options {
     destination_port_range {
-      min = 80
-      max = 80
+      min = var.http_port
+      max = var.http_port
     }
   }
 }

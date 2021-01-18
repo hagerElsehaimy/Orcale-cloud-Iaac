@@ -32,4 +32,5 @@ resource "oci_core_subnet" "vcn-private-subnet"{
   # Optional
   route_table_id = module.vcn.nat_route_id
   display_name = "DB-Tier-private-subnet"
+  dns_label = var.subnet_dns_label
 }
