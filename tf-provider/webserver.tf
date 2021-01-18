@@ -16,13 +16,13 @@ resource "oci_core_instance" "web_server_A" {
         nsg_ids = [oci_core_network_security_group.web_network_security_group.id]
         subnet_id = oci_core_subnet.vcn-public-subnetB.id
     }
-    display_name = var.instance_display_name
+    display_name = var.instance_A_display_name
     fault_domain = var.fault_domain_A
     
     metadata = {
       #  ssh_authorized_keys = var.ssh_public_key
         ssh_authorized_keys = file(var.ssh_public_key)
-        user_data = base64encode(file(var.custom_bootstrap_file_name))
+        user_data = base64encode(file("./apache_init.sh"))
     }
     source_details {
         #Required
@@ -45,13 +45,13 @@ resource "oci_core_instance" "web_server_B" {
         nsg_ids = [oci_core_network_security_group.web_network_security_group.id]
         subnet_id = oci_core_subnet.vcn-public-subnetB.id
     }
-    display_name = var.instance_display_name
+    display_name = var.instance_B_display_name
     fault_domain = var.fault_domain_B
     
     metadata = {
       #  ssh_authorized_keys = var.ssh_public_key
         ssh_authorized_keys = file(var.ssh_public_key)
-        user_data = base64encode(file(var.custom_bootstrap_file_name))
+        user_data = base64encode(file("./apache_init.sh"))
     }
     source_details {
         #Required

@@ -18,8 +18,11 @@ variable "private_key_path"{
 variable "instance_shape"{
     default = "VM.Standard.E2.1.Micro"
 }
-variable "instance_display_name"{
+variable "instance_A_display_name"{
   default = "webserver A"
+}
+variable "instance_B_display_name"{
+  default = "webserver B"
 }
 variable "fault_domain_A"{
   default = "FAULT-DOMAIN-1"
@@ -34,7 +37,7 @@ variable "preserve_boot_volume"{
   default = "false"
 }
 variable "custom_bootstrap_file_name"{
-  default = "/Users/hager/Downloads/install_apache.sh"
+  default = "./apache_init.sh"
 }
 variable "source_type"{
   default = "image"
@@ -83,5 +86,68 @@ variable "ingress_sg_type"{
   default = "NETWORK_SECURITY_GROUP"
 }
 variable "ssh_public_key"{
-  default = "/Users/hager/Downloads/public.key.pub"
+  default = "/Users/hager/Desktop/udemy/key.pub"
+}
+variable "shape"{
+  default = "10Mbps"
+}
+variable "lb_ip_mode"{
+  default = "IPV4"
+}
+variable "is_private"{
+  default = "false"
+}
+variable "lb1_display_name"{
+  default = "load_balancer_A"
+}
+variable "lb2_display_name"{
+  default = "load_balancer_B"
+}
+variable "listener_name"{
+  default = "lb_listener"
+}
+variable "http_port"{
+  default = 80
+}
+variable "listener_protocol"{
+  default = "HTTP"
+}
+variable "https_port"{
+  default = 443
+}
+variable "backend_set_name"{
+  default = "lb_backend"
+}
+variable "backend_set_policy"{
+  default = "LEAST_CONNECTIONS"
+}
+variable "backend_set_health_checker_url_path"{
+  default = "/"
+}
+variable "autonomous_database_db_name"{
+  default = "AppDB"
+}
+variable "autonomous_database_admin_password"{
+  default = "Orcale?12345"
+}
+variable "display_name"{
+  default = "AppDB"
+}
+variable "autonomous_database_is_free_tier"{
+  default = "true"
+}
+variable "autonomous_database_cpu_core_count"{
+  default = "1"
+}
+variable "autonomous_database_data_storage_size_in_tbs"{
+  default = "1"
+}
+variable "autonomous_database_private_endpoint_label"{
+  default = "Orcaledb1"
+}
+variable "autonomous_database_db_version"{
+  default = "19c"
+}
+variable "subnet_dns_label"{
+  default = "privatesubnet"
 }
