@@ -19,11 +19,11 @@ resource "oci_core_instance" "web_server_A" {
     display_name = var.instance_A_display_name
     fault_domain = var.fault_domain_A
     
-    metadata = {
-      #  ssh_authorized_keys = var.ssh_public_key
-        ssh_authorized_keys = file(var.ssh_public_key)
-        user_data = base64encode(file("./apache_init.sh"))
-    }
+#     metadata = {
+#       #  ssh_authorized_keys = var.ssh_public_key
+#         ssh_authorized_keys = file(var.ssh_public_key)
+#         user_data = base64encode(file("./apache_init.sh"))
+#     }
     source_details {
         #Required
         source_id = var.web_image_id
@@ -48,11 +48,11 @@ resource "oci_core_instance" "web_server_B" {
     display_name = var.instance_B_display_name
     fault_domain = var.fault_domain_B
     
-    metadata = {
-      #  ssh_authorized_keys = var.ssh_public_key
-        ssh_authorized_keys = file(var.ssh_public_key)
-        user_data = base64encode(file("./apache_init.sh"))
-    }
+#     metadata = {
+#       #  ssh_authorized_keys = var.ssh_public_key
+#         ssh_authorized_keys = file(var.ssh_public_key)
+#         user_data = base64encode(file("./apache_init.sh"))
+#     }
     source_details {
         #Required
         source_id = var.web_image_id
