@@ -31,7 +31,7 @@ variable "fault_domain_B"{
   default = "FAULT-DOMAIN-2"
 }
 variable "web_image_id"{
-  default = "ocid1.image.oc1.me-jeddah-1.aaaaaaaa5nbzzqouuczihfspsj4a23asfocaut4yucp7bvipqrt7vah6ylbq"
+  default = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaacwqra6qcg5iil3pwqdmtorw37prkvxaw4xql6fxt6gx4lp2diyoa"
 }
 variable "preserve_boot_volume"{
   default = "false"
