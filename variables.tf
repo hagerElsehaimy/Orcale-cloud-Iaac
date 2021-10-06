@@ -16,7 +16,7 @@ variable "private_key_path"{
     default = "/Users/hager/.oci/oci.pem"
 }
 variable "instance_shape"{
-    default = "VM.Standard.E2.1.Micro"
+    default = "VM.Standard.E2.1"
 }
 variable "instance_A_display_name"{
   default = "webserver A"
