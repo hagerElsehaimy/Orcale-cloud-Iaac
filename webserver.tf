@@ -39,7 +39,7 @@ resource "oci_core_instance" "web_server_A" {
     type     = "ssh"
     user     = "opc"
    # password = "${var.root_password}"
-    host     = oci_core_instance.instance.web_server_A.public_ip
+    host     = oci_core_instance.web_server_A.public_ip
     }
   }
    provisioner "remote-exec" {
