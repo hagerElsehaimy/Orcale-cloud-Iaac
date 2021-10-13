@@ -23,7 +23,7 @@ resource "oci_core_instance" "web_server_A" {
     metadata = {
 #       #  ssh_authorized_keys = var.ssh_public_key
         ssh_authorized_keys = file(var.ssh_public_key)
-        user_data = base64encode(file("./apache_init.sh"))
+       # user_data = base64encode(file("./apache_init.sh"))
     }
     source_details {
         #Required
@@ -32,17 +32,17 @@ resource "oci_core_instance" "web_server_A" {
     }
     preserve_boot_volume = var.preserve_boot_volume
   
-#   provisioner "file" {
-#     source      = "apache_init.sh"
-#     destination = "/tmp/apache_init.sh"
-#   }
+  provisioner "file" {
+    source      = "apache_init.sh"
+    destination = "/home/opc/apache_init.sh"
+  }
 
-#   provisioner "remote-exec" {
-#     inline = [
-#       "chmod +x /tmp/apache_init.sh",
-#       "/tmp/apache_init.sh",
-#     ]
-#   }
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/apache_init.sh",
+      "/home/opc/apache_init.sh",
+    ]
+  }
 }
 
 resource "oci_core_instance" "web_server_B" {
