@@ -1,22 +1,22 @@
 variable "tenancy_ocid" {
-  default = "ocid1.tenancy.oc1..aaaaaaaadus45gcw2hf7r6a5wfjegzovazmxqemryxhto5phlt2gpalpcahq"
+  default = "ocid1.compartment.oc1..aaaaaaaa4vtosolddtixrwkdk43zpoyjehqbnbyy5wqfn4njzthbp3q74d6q"
 }
 
 variable "user_ocid" {
-  default = "ocid1.user.oc1..aaaaaaaavurwybmsv4mhuo656rnfhisho6oqkn6yim5xfw4aw7it3d2l5hda"
+  default = "ocid1.user.oc1..aaaaaaaayled52iv5y6rryf5etpetdmixbmbsnja7zfgcmxqd2egsa7ahctq"
 }
 
-variable "fingerprint" {
-  default = "49:42:ba:b3:86:6c:ad:1c:21:a7:b5:65:c0:7c:9c:f0"
-}
+# variable "fingerprint" {
+#   default = "49:42:ba:b3:86:6c:ad:1c:21:a7:b5:65:c0:7c:9c:f0"
+# }
 variable "region_identifier" {
-  default = "me-jeddah-1"
+  default = "eu-frankfurt-1"
 }
-variable "private_key_path"{
-    default = "/Users/hager/.oci/oci.pem"
-}
+# variable "private_key_path"{
+#     default = "/Users/hager/.oci/oci.pem"
+# }
 variable "instance_shape"{
-    default = "VM.Standard.E2.1.Micro"
+    default = "VM.Standard.E2.1"
 }
 variable "instance_A_display_name"{
   default = "webserver A"
@@ -31,7 +31,7 @@ variable "fault_domain_B"{
   default = "FAULT-DOMAIN-2"
 }
 variable "web_image_id"{
-  default = "ocid1.image.oc1.me-jeddah-1.aaaaaaaa5nbzzqouuczihfspsj4a23asfocaut4yucp7bvipqrt7vah6ylbq"
+  default = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaakupirlollheqkpxz72oblrchnrykc25wk6jkwy5cxd3w3ltu46vq"
 }
 variable "preserve_boot_volume"{
   default = "false"
@@ -86,7 +86,7 @@ variable "ingress_sg_type"{
   default = "NETWORK_SECURITY_GROUP"
 }
 variable "ssh_public_key"{
-  default = "/Users/hager/Desktop/udemy/key.pub"
+  default = "key.pub"
 }
 variable "shape"{
   default = "10Mbps"
