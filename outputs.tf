@@ -30,3 +30,7 @@ output "private_subnet"{
     value = oci_core_subnet.vcn-private-subnet.id
     description = "DB Tier"
 }
+# output "public_ip" {
+#   description = "Public IPs of created instances. "
+#   value       = oci_core_instance.instance.web_server_A.public_ip
+#}

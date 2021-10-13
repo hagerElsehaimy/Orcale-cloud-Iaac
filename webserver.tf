@@ -36,14 +36,19 @@ resource "oci_core_instance" "web_server_A" {
 #     source      = "apache_init.sh"
 #     destination = "/home/opc/apache_init.sh"
 #   }
-
+}
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/apache_init.sh",
       "./apache_init.sh",
     ]
+    connection {
+    type     = "ssh"
+    user     = "opc"
+   # password = "${var.root_password}"
+    host     = oci_core_instance.instance.web_server_A.public_ip
+    }
   }
-}
 
 resource "oci_core_instance" "web_server_B" {
     #Required
