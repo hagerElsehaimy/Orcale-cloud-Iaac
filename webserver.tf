@@ -35,20 +35,19 @@ resource "oci_core_instance" "web_server_A" {
   provisioner "file" {
     source      = "apache_init.sh"
     destination = "/home/opc/apache_init.sh"
-  connection {
-    type     = "ssh"
-    user     = "opc"
-   # password = "${var.root_password}"
-    private_key = file("./private.key")
-    host     = oci_core_instance.web_server_A.public_ip
-    }
   }
    provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/apache_init.sh",
       "./apache_init.sh",
     ]
-    
+     connection {
+    type     = "ssh"
+    user     = "opc"
+   # password = "${var.root_password}"
+    private_key = file("private.key")
+    host     = oci_core_instance.web_server_A.public_ip
+    }
   }
 }
 
