@@ -150,3 +150,19 @@ resource "oci_core_network_security_group_security_rule" "db_egress" {
   destination_type = var.cidr_type
   destination  = var.all_traffic
 }
+
+resource "oci_core_network_security_group_security_rule" "web_ingress" {
+  network_security_group_id = oci_core_network_security_group.web_network_security_group.id
+
+  description = var.http_ingress_description
+  protocol = var.ingress_protocol
+  direction   = var.ingress_direction
+  source_type = var.cidr_type
+  source      = var.all_traffic
+  tcp_options {
+    destination_port_range {
+      min = var.http_port
+      max = var.http_port
+    }
+  }
+}
