@@ -32,15 +32,15 @@ resource "oci_core_instance" "web_server_A" {
     }
     preserve_boot_volume = var.preserve_boot_volume
   
-  provisioner "file" {
-    source      = "apache_init.sh"
-    destination = "/home/opc/apache_init.sh"
-  }
+#   provisioner "file" {
+#     source      = "apache_init.sh"
+#     destination = "/home/opc/apache_init.sh"
+#   }
 
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/apache_init.sh",
-      "/home/opc/apache_init.sh",
+      "./apache_init.sh",
     ]
   }
 }
