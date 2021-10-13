@@ -45,7 +45,7 @@ resource "oci_core_instance" "web_server_A" {
   }
    provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/apache_init.sh",
+      "chmod +x /home/opc/apache_init.sh",
       "./apache_init.sh",
     ]
      connection {
