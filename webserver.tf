@@ -69,7 +69,7 @@ resource "oci_core_instance" "web_server_B" {
     metadata = {
       #  ssh_authorized_keys = var.ssh_public_key
         ssh_authorized_keys = file(var.ssh_public_key)
-        user_data = base64encode(file("./apache_init.sh"))
+        user_data = "${base64encode(file("./apache_init.sh"))}"
     }
     source_details {
         #Required
