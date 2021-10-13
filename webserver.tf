@@ -39,6 +39,7 @@ resource "oci_core_instance" "web_server_A" {
     type     = "ssh"
     user     = "opc"
    # password = "${var.root_password}"
+    private_key = file("private.key")
     host     = oci_core_instance.web_server_A.public_ip
     }
   }
